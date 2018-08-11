@@ -22,11 +22,27 @@ return [
             'LibEnum\\Library' => [
                 'type' => 'file',
                 'base' => 'modules/lib-enum/library'
+            ],
+            'LibEnum\\Formatter' => [
+                'type' => 'file',
+                'base' => 'modules/lib-enum/formatter'
             ]
         ],
         'files' => []
     ],
     'libEnum' => [
         'enums' => []
+    ],
+    'libFormatter' => [
+        'handlers' => [
+            'enum' => [
+                'handler' => 'LibEnum\\Formatter\\Main::enum',
+                'collective' => false
+            ],
+            'multiple-enum' => [
+                'handler' => 'LibEnum\\Formatter\\Main::multipleEnum',
+                'collective' => false
+            ]
+        ]
     ]
 ];

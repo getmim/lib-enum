@@ -49,3 +49,31 @@ $options = $enum->options;
 
 Untuk mendapatkan options suatu object, bisa juga menggunakan static method
 dari class di atas dengan method `getOptions(string $name)`
+
+## Formatter
+
+Jika module `lib-formatter` terpasang, module ini menambah dua format type,
+yaitu:
+
+### enum
+
+Mengubah nilai menjadi object enum.
+
+```php
+'field' => [
+    'type' => 'enum',
+    'enum' => 'enum-name'
+]
+```
+
+### multiple-enum
+
+Mengubah nilai menjadi beberapa object enum.
+
+```php
+'field' => [
+    'type' => 'multiple-enum',
+    'separator' => ',',
+    'enum' => 'enum-name'
+]
+```
