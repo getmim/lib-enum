@@ -37,11 +37,18 @@ return [
         'handlers' => [
             'enum' => [
                 'handler' => 'LibEnum\\Formatter\\Main::enum',
-                'collective' => false
+                'collective' => FALSE
             ],
             'multiple-enum' => [
                 'handler' => 'LibEnum\\Formatter\\Main::multipleEnum',
-                'collective' => false
+                'collective' => FALSE
+            ]
+        ]
+    ],
+    'callback' => [
+        'app' => [
+            'reconfig' => [
+                'LibEnum\\Library\\Config::reconfig' => TRUE
             ]
         ]
     ]
