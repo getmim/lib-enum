@@ -18,13 +18,25 @@ class Enum implements \JsonSerializable
         return \Mim::$app->config->libEnum->enums->$name ?? null;
     }
 
-    public function __construct(string $name, $value=null){
+    public function __construct(string $name, $value=null, string $value_type=null){
         $options = self::getOptions($name);
         if(!$options)
             return;
         $this->options = $options;
         if(is_null($value))
             return;
+
+        if(!is_null($value_type)){
+            switch($value_type){
+                case 'int':
+                    $value = (int)$value;
+                    break;
+                case 'str':
+                    $value = (string)$value;
+                    break;
+            }
+        }
+
         $this->value = $value;
         $this->label = $options[$value];
     }

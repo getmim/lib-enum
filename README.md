@@ -62,7 +62,8 @@ Mengubah nilai menjadi object enum.
 ```php
 'field' => [
     'type' => 'enum',
-    'enum' => 'enum-name'
+    'enum' => 'enum-name',
+    'vtype' => 'int' // optional
 ]
 ```
 
@@ -74,6 +75,10 @@ Mengubah nilai menjadi beberapa object enum.
 'field' => [
     'type' => 'multiple-enum',
     'separator' => ',',
-    'enum' => 'enum-name'
+    'enum' => 'enum-name',
+    'vtype' => 'str' // optional
 ]
 ```
+
+Properti `vtype` diatas memastikan type `value` akan dikonversi menjadi type
+yang disebutkan. Nilai yang diterima adalah `int` dan `str`.
