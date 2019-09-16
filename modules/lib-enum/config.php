@@ -2,7 +2,7 @@
 
 return [
     '__name' => 'lib-enum',
-    '__version' => '0.0.2',
+    '__version' => '0.0.3',
     '__git' => 'git@github.com:getmim/lib-enum.git',
     '__license' => 'MIT',
     '__author' => [
@@ -11,7 +11,9 @@ return [
         'website' => 'http://iqbalfn.com/'
     ],
     '__files' => [
-        'modules/lib-enum' => ['install','update','remove']
+        'modules/lib-enum' => ['install','update','remove'],
+        'etc/locale/en-US/form/error/enum.php' => ['install','update','remove'],
+        'etc/locale/id-ID/form/error/enum.php' => ['install','update','remove']
     ],
     '__dependencies' => [
         'required' => [],
@@ -26,6 +28,10 @@ return [
             'LibEnum\\Formatter' => [
                 'type' => 'file',
                 'base' => 'modules/lib-enum/formatter'
+            ],
+            'LibEnum\\Validator' => [
+                'type' => 'file',
+                'base' => 'modules/lib-enum/validator'
             ]
         ],
         'files' => []
@@ -43,6 +49,15 @@ return [
                 'handler' => 'LibEnum\\Formatter\\Main::multipleEnum',
                 'collective' => FALSE
             ]
+        ]
+    ],
+    'libValidator' => [
+        'errors' => [
+            '22.0' => 'form.error.enum.options_not_found',
+            '22.1' => 'form.error.enum.selected_value_is_not_in_options'
+        ],
+        'validators' => [
+            'enum' => 'LibEnum\\Validator\\Enum::in'
         ]
     ],
     'callback' => [

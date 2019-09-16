@@ -82,3 +82,22 @@ Mengubah nilai menjadi beberapa object enum.
 
 Properti `vtype` diatas memastikan type `value` akan dikonversi menjadi type
 yang disebutkan. Nilai yang diterima adalah `int` dan `str`.
+
+## Validator
+
+Jika module `lib-validator` terpasang, maka module ini mendaftarkan tipe validasi seperti di bawah:
+
+### enum
+
+```php
+// ...
+    'field' => [
+        'rules' => [
+            'required' => true,
+            'enum' => 'enum-key'
+        ]
+    ]
+// ...
+```
+
+Memastikan nilai yang dikirimkan oleh user adalah salah satu dari yang di daftarkan pada suatu enum.
