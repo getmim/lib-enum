@@ -2,7 +2,7 @@
 
 return [
     '__name' => 'lib-enum',
-    '__version' => '0.0.3',
+    '__version' => '0.1.0',
     '__git' => 'git@github.com:getmim/lib-enum.git',
     '__license' => 'MIT',
     '__author' => [
@@ -54,7 +54,8 @@ return [
     'libValidator' => [
         'errors' => [
             '22.0' => 'form.error.enum.options_not_found',
-            '22.1' => 'form.error.enum.selected_value_is_not_in_options'
+            '22.1' => 'form.error.enum.selected_value_is_not_in_options',
+            '22.2' => 'form.error.enum.one_or_more_selected_value_is_not_in_options'
         ],
         'validators' => [
             'enum' => 'LibEnum\\Validator\\Enum::in'

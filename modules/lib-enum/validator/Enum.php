@@ -14,9 +14,18 @@ class Enum{
             return ['22.0'];
 
         $enums = (array)$enums;
-        if(array_key_exists($value, $enums))
-            return null;
 
-        return ['22.1'];
+        if(!is_array($value)){
+            if(array_key_exists($value, $enums))
+                return null;
+            return ['22.1'];
+        }
+
+        foreach($value as $val){
+            if(!array_key_exists($val, $enums))
+                return ['22.2'];
+        }
+
+        return null;
     }
 }
