@@ -38,7 +38,7 @@ class Enum implements \JsonSerializable
         }
 
         $this->value = $value;
-        $this->label = $options[$value];
+        $this->label = $options[$value] ?? NULL;
     }
 
     public function __get($name) {
