@@ -36,7 +36,7 @@ class Enum implements \JsonSerializable
                     break;
             }
         }
-
+        
         $this->value = $value;
         $this->label = $options[$value] ?? NULL;
     }

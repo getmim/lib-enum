@@ -16,7 +16,11 @@ class Main
     }
 
     static function multipleEnum($value, $f, $o, $format){
-        $values = explode($format->separator, $value);
+        if($format->separator === 'json')
+            $values = json_decode($value);
+        else
+            $values = explode($format->separator, $value);
+
         $result = [];
         foreach($values as $val)
             $result[] = new Enum($format->enum, trim($val), ($format->vtype??NULL));
