@@ -16,6 +16,9 @@ class Main
     }
 
     static function multipleEnum($value, $f, $o, $format){
+        if(!$value)
+            return [];
+        
         if($format->separator === 'json')
             $values = json_decode($value);
         else
