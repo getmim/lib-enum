@@ -51,6 +51,7 @@ class Enum implements \JsonSerializable
         return $this->label;
     }
 
+    #[\ReturnTypeWillChange]
     public function jsonSerialize() {
         return ['label'=>$this->label, 'value'=>$this->value];
     }

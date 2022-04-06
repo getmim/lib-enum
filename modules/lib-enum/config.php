@@ -2,7 +2,7 @@
 
 return [
     '__name' => 'lib-enum',
-    '__version' => '0.2.1',
+    '__version' => '0.3.0',
     '__git' => 'git@github.com:getmim/lib-enum.git',
     '__license' => 'MIT',
     '__author' => [
